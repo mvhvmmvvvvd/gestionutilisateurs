@@ -1,0 +1,12 @@
+<actions>
+    <action>
+        <actionName>run</actionName>
+        <goals>
+            <goal>compile</goal>
+            <goal>exec:java</goal>
+        </goals>
+        <properties>
+            <exec.mainClass>GestionClients</exec.mainClass>
+        </properties>
+    </action>
+</actions>
