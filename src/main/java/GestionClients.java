@@ -1,5 +1,5 @@
 import control.MainControl;
-import view.MainView; // Ensure this import is correct
+import view.MainView; 
 
 /**
  * Classe principale pour lancer l'application de gestion des clients.
