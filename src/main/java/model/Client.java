@@ -2,12 +2,18 @@ package model;
 
 public class Client {
     private int id;
-    private String name;
+    private String nom;
+    private String prenom;
+    private String telephone;
+    private String ville;
     private String email;
 
-    public Client(int id, String name, String email) {
+    public Client(int id, String nom, String prenom, String telephone, String ville, String email) {
         this.id = id;
-        this.name = name;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.telephone = telephone;
+        this.ville = ville;
         this.email = email;
     }
 
@@ -15,20 +21,40 @@ public class Client {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getNom() {
+        return nom;
     }
 
-    public String getName() {
-        return name;
+    public String getPrenom() {
+        return prenom;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public String getVille() {
+        return ville;
     }
 
     public String getEmail() {
         return email;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
     }
 
     public void setEmail(String email) {

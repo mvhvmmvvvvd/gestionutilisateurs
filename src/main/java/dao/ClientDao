@@ -9,8 +9,8 @@ public class ClientDAO {
     public ClientDAO() {
         this.clients = new ArrayList<>();
         // Exemple de données initiales
-        clients.add(new Client(1, "Jean", "Dupont", "0123456789", "Paris", "jean.dupont@example.com"));
-        clients.add(new Client(2, "Marie", "Curie", "0987654321", "Lyon", "marie.curie@example.com"));
+        clients.add(new Client(1, "Jean Dupont", "jean.dupont@example.com"));
+        clients.add(new Client(2, "Marie Curie", "marie.curie@example.com"));
     }
 
     public List<Client> getAllClients() {
@@ -24,10 +24,7 @@ public class ClientDAO {
     public void updateClient(int id, Client updatedClient) {
         for (Client client : clients) {
             if (client.getId() == id) {
-                client.setNom(updatedClient.getNom());
-                client.setPrenom(updatedClient.getPrenom());
-                client.setTelephone(updatedClient.getTelephone());
-                client.setVille(updatedClient.getVille());
+                client.setName(updatedClient.getName());
                 client.setEmail(updatedClient.getEmail());
                 break;
             }

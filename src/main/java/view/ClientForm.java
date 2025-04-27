@@ -1,63 +1,85 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+package view;
 
-public class ClientForm extends JDialog {
-    private JTextField nameField;
-    private JTextField emailField;
-    private JCheckBox adPreferencesCheckBox;
-    private JButton saveButton;
-    private JButton cancelButton;
+import java.awt.GridLayout;
 
-    public ClientForm(Frame parent) {
-        super(parent, "Client Form", true);
-        setLayout(new GridLayout(4, 2));
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
-        add(new JLabel("Name:"));
-        nameField = new JTextField();
-        add(nameField);
+public class ClientForm extends JFrame {
+    private final JTextField nomField;
+    private final JTextField prenomField;
+    private final JTextField telephoneField;
+    private final JTextField villeField;
+    private final JTextField emailField;
+    private final JButton saveButton;
+    private final JButton cancelButton;
 
-        add(new JLabel("Email:"));
-        emailField = new JTextField();
+    public ClientForm() {
+        setTitle("Formulaire Client");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        JLabel nomLabel = new JLabel("Nom:");
+        nomField = new JTextField(20);
+
+        JLabel prenomLabel = new JLabel("Prénom:");
+        prenomField = new JTextField(20);
+
+        JLabel telephoneLabel = new JLabel("Téléphone:");
+        telephoneField = new JTextField(20);
+
+        JLabel villeLabel = new JLabel("Ville:");
+        villeField = new JTextField(20);
+
+        JLabel emailLabel = new JLabel("Email:");
+        emailField = new JTextField(20);
+
+        saveButton = new JButton("Enregistrer");
+        cancelButton = new JButton("Annuler");
+
+        setLayout(new GridLayout(6, 2, 10, 10));
+        add(nomLabel);
+        add(nomField);
+        add(prenomLabel);
+        add(prenomField);
+        add(telephoneLabel);
+        add(telephoneField);
+        add(villeLabel);
+        add(villeField);
+        add(emailLabel);
         add(emailField);
-
-        add(new JLabel("Receive Advertisements:"));
-        adPreferencesCheckBox = new JCheckBox();
-        add(adPreferencesCheckBox);
-
-        saveButton = new JButton("Save");
-        saveButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Logic to save client information
-                dispose();
-            }
-        });
         add(saveButton);
-
-        cancelButton = new JButton("Cancel");
-        cancelButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-            }
-        });
         add(cancelButton);
-
-        setSize(300, 200);
-        setLocationRelativeTo(parent);
     }
 
-    public String getClientName() {
-        return nameField.getText();
+    public JTextField getNomField() {
+        return nomField;
     }
 
-    public String getClientEmail() {
-        return emailField.getText();
+    public JTextField getPrenomField() {
+        return prenomField;
     }
 
-    public boolean isAdPreferencesChecked() {
-        return adPreferencesCheckBox.isSelected();
+    public JTextField getTelephoneField() {
+        return telephoneField;
+    }
+
+    public JTextField getVilleField() {
+        return villeField;
+    }
+
+    public JTextField getEmailField() {
+        return emailField;
+    }
+
+    public JButton getSaveButton() {
+        return saveButton;
+    }
+
+    public JButton getCancelButton() {
+        return cancelButton;
     }
 }
