@@ -22,7 +22,7 @@ public class GestionClients {
         // Lancer l'application
         java.awt.EventQueue.invokeLater(() -> {
             MainView view = new MainView();
-            new MainControl(view); // Initialisation du contrôleur
+            new MainControl(view); 
             view.setVisible(true);
         });
     }
