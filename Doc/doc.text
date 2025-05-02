@@ -1,0 +1,15 @@
+-- Crée la base de données
+CREATE DATABASE gestion_clients;
+
+-- Utilise la base de données
+USE gestion_clients;
+
+-- Crée la table clients
+CREATE TABLE clients (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(50) NOT NULL,
+    prenom VARCHAR(50) NOT NULL,
+    telephone VARCHAR(15),
+    ville VARCHAR(50),
+    email VARCHAR(100)
+);
